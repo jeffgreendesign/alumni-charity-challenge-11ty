@@ -41,9 +41,8 @@ $(document).ready(function(){
       // Using jQuery's animate() method to add smooth page scroll
       // The optional number (300) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top - 28
+        scrollTop: $(hash).offset().top - 58
       }, 300, function(){
-   
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
@@ -89,7 +88,4 @@ $(document).ready(function(){
       remove: false
     });
   });
-
-  console.log('testing');
-
 });

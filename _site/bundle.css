@@ -290,8 +290,8 @@ a img:hover {
 }
 
 .home-headline {
-  background-image: url("../img/2023/web-logo-2023-mdpi.png");
-  background-image: url("../img/2023/web-logo-2023.svg");
+  background-image: url("../img/2024/web-logo-2024.png");
+  background-image: url("../img/2024/web-logo-2024.svg");
   background-position: center top;
   background-repeat: no-repeat;
   height: 7em;
@@ -393,10 +393,6 @@ a img:hover {
 #recognition img {
   border: 1px solid #e8e8e8;
   margin: 0 auto;
-}
-
-#recognition .col-xs-6:nth-child(odd) {
-  clear: left;
 }
 
 .rec-doc {
