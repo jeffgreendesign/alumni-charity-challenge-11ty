@@ -6,12 +6,12 @@
  * MIT License
  */
 
-!(function (t, e) {
+(!(function (t, e) {
   "function" == typeof define && define.amd
     ? define("ev-emitter/ev-emitter", e)
     : "object" == typeof module && module.exports
-    ? (module.exports = e())
-    : (t.EvEmitter = e());
+      ? (module.exports = e())
+      : (t.EvEmitter = e());
 })(this, function () {
   function t() {}
   var e = t.prototype;
@@ -20,7 +20,7 @@
       if (t && e) {
         var i = (this._events = this._events || {}),
           n = (i[t] = i[t] || []);
-        return -1 == n.indexOf(e) && n.push(e), this;
+        return (-1 == n.indexOf(e) && n.push(e), this);
       }
     }),
     (e.once = function (t, e) {
@@ -28,14 +28,14 @@
         this.on(t, e);
         var i = (this._onceEvents = this._onceEvents || {}),
           n = (i[t] = i[t] || []);
-        return (n[e] = !0), this;
+        return ((n[e] = !0), this);
       }
     }),
     (e.off = function (t, e) {
       var i = this._events && this._events[t];
       if (i && i.length) {
         var n = i.indexOf(e);
-        return -1 != n && i.splice(n, 1), this;
+        return (-1 != n && i.splice(n, 1), this);
       }
     }),
     (e.emitEvent = function (t, e) {
@@ -46,10 +46,10 @@
         e = e || [];
         for (var r = this._onceEvents && this._onceEvents[t]; o; ) {
           var s = r && r[o];
-          s && (this.off(t, o), delete r[o]),
+          (s && (this.off(t, o), delete r[o]),
             o.apply(this, e),
             (n += s ? 0 : 1),
-            (o = i[n]);
+            (o = i[n]));
         }
         return this;
       }
@@ -64,8 +64,8 @@
           return e(t, i);
         })
       : "object" == typeof module && module.exports
-      ? (module.exports = e(t, require("ev-emitter")))
-      : (t.imagesLoaded = e(t, t.EvEmitter));
+        ? (module.exports = e(t, require("ev-emitter")))
+        : (t.imagesLoaded = e(t, t.EvEmitter));
   })(window, function (t, e) {
     function i(t, e) {
       for (var i in e) t[i] = e[i];
@@ -99,18 +99,19 @@
       this.img = t;
     }
     function s(t, e) {
-      (this.url = t), (this.element = e), (this.img = new Image());
+      ((this.url = t), (this.element = e), (this.img = new Image()));
     }
     var h = t.jQuery,
       a = t.console;
-    (o.prototype = Object.create(e.prototype)),
+    ((o.prototype = Object.create(e.prototype)),
       (o.prototype.options = {}),
       (o.prototype.getImages = function () {
-        (this.images = []), this.elements.forEach(this.addElementImages, this);
+        ((this.images = []),
+          this.elements.forEach(this.addElementImages, this));
       }),
       (o.prototype.addElementImages = function (t) {
-        "IMG" == t.nodeName && this.addImage(t),
-          this.options.background === !0 && this.addElementBackgroundImages(t);
+        ("IMG" == t.nodeName && this.addImage(t),
+          this.options.background === !0 && this.addElementBackgroundImages(t));
         var e = t.nodeType;
         if (e && d[e]) {
           for (var i = t.querySelectorAll("img"), n = 0; n < i.length; n++) {
@@ -125,7 +126,7 @@
             }
           }
         }
-      });
+      }));
     var d = { 1: !0, 9: !0, 11: !0 };
     return (
       (o.prototype.addElementBackgroundImages = function (t) {
@@ -137,7 +138,7 @@
 
           ) {
             var o = n && n[2];
-            o && this.addBackground(o, t), (n = i.exec(e.backgroundImage));
+            (o && this.addBackground(o, t), (n = i.exec(e.backgroundImage)));
           }
       }),
       (o.prototype.addImage = function (t) {
@@ -160,20 +161,20 @@
           (this.hasAnyBroken = !1),
           this.images.length
             ? void this.images.forEach(function (e) {
-                e.once("progress", t), e.check();
+                (e.once("progress", t), e.check());
               })
             : void this.complete()
         );
       }),
       (o.prototype.progress = function (t, e, i) {
-        this.progressedCount++,
+        (this.progressedCount++,
           (this.hasAnyBroken = this.hasAnyBroken || !t.isLoaded),
           this.emitEvent("progress", [this, t, e]),
           this.jqDeferred &&
             this.jqDeferred.notify &&
             this.jqDeferred.notify(this, t),
           this.progressedCount == this.images.length && this.complete(),
-          this.options.debug && a && a.log("progress: " + i, t, e);
+          this.options.debug && a && a.log("progress: " + i, t, e));
       }),
       (o.prototype.complete = function () {
         var t = this.hasAnyBroken ? "fail" : "done";
@@ -203,55 +204,55 @@
         return this.img.complete && void 0 !== this.img.naturalWidth;
       }),
       (r.prototype.confirm = function (t, e) {
-        (this.isLoaded = t), this.emitEvent("progress", [this, this.img, e]);
+        ((this.isLoaded = t), this.emitEvent("progress", [this, this.img, e]));
       }),
       (r.prototype.handleEvent = function (t) {
         var e = "on" + t.type;
         this[e] && this[e](t);
       }),
       (r.prototype.onload = function () {
-        this.confirm(!0, "onload"), this.unbindEvents();
+        (this.confirm(!0, "onload"), this.unbindEvents());
       }),
       (r.prototype.onerror = function () {
-        this.confirm(!1, "onerror"), this.unbindEvents();
+        (this.confirm(!1, "onerror"), this.unbindEvents());
       }),
       (r.prototype.unbindEvents = function () {
-        this.proxyImage.removeEventListener("load", this),
+        (this.proxyImage.removeEventListener("load", this),
           this.proxyImage.removeEventListener("error", this),
           this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+          this.img.removeEventListener("error", this));
       }),
       (s.prototype = Object.create(r.prototype)),
       (s.prototype.check = function () {
-        this.img.addEventListener("load", this),
+        (this.img.addEventListener("load", this),
           this.img.addEventListener("error", this),
-          (this.img.src = this.url);
+          (this.img.src = this.url));
         var t = this.getIsImageComplete();
         t &&
           (this.confirm(0 !== this.img.naturalWidth, "naturalWidth"),
           this.unbindEvents());
       }),
       (s.prototype.unbindEvents = function () {
-        this.img.removeEventListener("load", this),
-          this.img.removeEventListener("error", this);
+        (this.img.removeEventListener("load", this),
+          this.img.removeEventListener("error", this));
       }),
       (s.prototype.confirm = function (t, e) {
-        (this.isLoaded = t),
-          this.emitEvent("progress", [this, this.element, e]);
+        ((this.isLoaded = t),
+          this.emitEvent("progress", [this, this.element, e]));
       }),
       (o.makeJQueryPlugin = function (e) {
-        (e = e || t.jQuery),
+        ((e = e || t.jQuery),
           e &&
             ((h = e),
             (h.fn.imagesLoaded = function (t, e) {
               var i = new o(this, t, e);
               return i.jqDeferred.promise(h(this));
-            }));
+            })));
       }),
       o.makeJQueryPlugin(),
       o
     );
-  });
+  }));
 
 /*
  * jquery-match-height 0.7.0 by @liabru
@@ -263,8 +264,8 @@
   "function" == typeof define && define.amd
     ? define(["jquery"], t)
     : "undefined" != typeof module && module.exports
-    ? (module.exports = t(require("jquery")))
-    : t(jQuery);
+      ? (module.exports = t(require("jquery")))
+      : t(jQuery);
 })(function (t) {
   var e = -1,
     o = -1,
@@ -281,12 +282,12 @@
           var e = t(this),
             a = e.offset().top - i(e.css("margin-top")),
             s = r.length > 0 ? r[r.length - 1] : null;
-          null === s
+          (null === s
             ? r.push(e)
             : Math.floor(Math.abs(n - a)) <= o
-            ? (r[r.length - 1] = s.add(e))
-            : r.push(e),
-            (n = a);
+              ? (r[r.length - 1] = s.add(e))
+              : r.push(e),
+            (n = a));
         }),
         r
       );
@@ -323,7 +324,7 @@
           r._apply(this, o),
           this);
     });
-  (r.version = "0.7.0"),
+  ((r.version = "0.7.0"),
     (r._groups = []),
     (r._throttle = 80),
     (r._maintainScroll = !1),
@@ -350,7 +351,7 @@
           (h.each(function () {
             var e = t(this),
               o = e.css("display");
-            "inline-block" !== o &&
+            ("inline-block" !== o &&
               "flex" !== o &&
               "inline-flex" !== o &&
               (o = "block"),
@@ -365,7 +366,7 @@
                 "border-bottom-width": "0",
                 height: "100px",
                 overflow: "hidden",
-              });
+              }));
           }),
           (l = a(h)),
           h.each(function () {
@@ -389,10 +390,10 @@
               var a = {
                 display: i,
               };
-              (a[s.property] = ""),
+              ((a[s.property] = ""),
                 e.css(a),
                 e.outerHeight(!1) > n && (n = e.outerHeight(!1)),
-                o ? e.attr("style", o) : e.css("display", "");
+                o ? e.attr("style", o) : e.css("display", ""));
             });
           }
           a.each(function () {
@@ -418,23 +419,23 @@
     }),
     (r._applyDataApi = function () {
       var e = {};
-      t("[data-match-height], [data-mh]").each(function () {
+      (t("[data-match-height], [data-mh]").each(function () {
         var o = t(this),
           i = o.attr("data-mh") || o.attr("data-match-height");
         i in e ? (e[i] = e[i].add(o)) : (e[i] = o);
       }),
         t.each(e, function () {
           this.matchHeight(!0);
-        });
-    });
+        }));
+    }));
   var s = function (e) {
-    r._beforeUpdate && r._beforeUpdate(e, r._groups),
+    (r._beforeUpdate && r._beforeUpdate(e, r._groups),
       t.each(r._groups, function () {
         r._apply(this.elements, this.options);
       }),
-      r._afterUpdate && r._afterUpdate(e, r._groups);
+      r._afterUpdate && r._afterUpdate(e, r._groups));
   };
-  (r._update = function (i, a) {
+  ((r._update = function (i, a) {
     if (a && "resize" === a.type) {
       var n = t(window).width();
       if (n === e) return;
@@ -443,7 +444,7 @@
     i
       ? -1 === o &&
         (o = setTimeout(function () {
-          s(a), (o = -1);
+          (s(a), (o = -1));
         }, r._throttle))
       : s(a);
   }),
@@ -453,7 +454,7 @@
     }),
     t(window).bind("resize orientationchange", function (t) {
       r._update(!0, t);
-    });
+    }));
 });
 
 // Page scripts

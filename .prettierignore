@@ -1,0 +1,11 @@
+# Ignore build output and vendor files
+_site/
+node_modules/
+js/vendor/
+*.min.js
+*.min.css
+package-lock.json
+
+# Ignore specific generated files
+bundle.css
+bundle.js 

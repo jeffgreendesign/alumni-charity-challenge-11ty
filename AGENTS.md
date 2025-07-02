@@ -14,12 +14,14 @@ A JavaScript-based animation system using GSAP (GreenSock Animation Platform) ha
 - **jQuery Interaction**: The animation code is designed to be independent of the existing jQuery code in `main.js`.
 
 **When working with animations:**
+
 - Refer to the documentation in `js/animations.js` for guidelines on creating new animations.
 - Ensure new animations also respect the `prefers-reduced-motion` setting.
 - Test thoroughly on desktop and mobile, paying attention to performance and potential conflicts.
 - Keep animations purposeful and avoid overly complex or distracting effects.
 
 ## General
+
 - The site is built using Eleventy (11ty).
 - Bootstrap 3.3.7 is used for styling and layout.
 - Custom CSS is in `bundle.css`.
