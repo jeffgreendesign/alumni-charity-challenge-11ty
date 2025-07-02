@@ -1,23 +1,24 @@
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 
-module.exports = function(eleventyConfig) {
-  
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
-	eleventyConfig.addPassthroughCopy("main.js");
-  eleventyConfig.addPassthroughCopy("js/animations.js"); // Added this line
+  eleventyConfig.addPassthroughCopy("main.js");
+  eleventyConfig.addPassthroughCopy("js/main.js");
+  eleventyConfig.addPassthroughCopy("js/animations.js");
+  eleventyConfig.addPassthroughCopy("test-animations.html");
 
-  eleventyConfig.addFilter("cssmin", function(code) {
+  eleventyConfig.addFilter("cssmin", function (code) {
     return new CleanCSS({}).minify(code).styles;
   });
 
-  eleventyConfig.addTransform("htmlmin", function(content) {
+  eleventyConfig.addTransform("htmlmin", function (content) {
     // Prior to Eleventy 2.0: use this.outputPath instead
-    if( this.page.outputPath && this.page.outputPath.endsWith(".html") ) {
+    if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
       return minified;
     }
