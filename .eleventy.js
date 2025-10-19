@@ -2,7 +2,10 @@ const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
-  
+
+  // Ignore CLAUDE.md to prevent Liquid syntax processing
+  eleventyConfig.ignores.add("CLAUDE.md");
+
   eleventyConfig.addPassthroughCopy("bundle.css");
 	eleventyConfig.addPassthroughCopy("main.js");
 

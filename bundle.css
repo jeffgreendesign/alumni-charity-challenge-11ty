@@ -290,15 +290,15 @@ a img:hover {
 
 #home {
   background-color: #fff;
-  background-image: url("../img/global/background-acc-2022-stadium-03.jpg");
+  /* background-image: url("../img/global/background-acc-2022-stadium-03.jpg"); */
   background-size: cover;
   background-position: center 15%;
   text-align: center;
 }
 
 .home-headline {
-  background-image: url("../img/2024/web-logo-2024.png");
-  background-image: url("../img/2024/web-logo-2024-04.svg");
+  background-image: url("../img/2025/web-logo-2025-13th-01.png");
+  background-image: url("../img/2025/web-logo-2025-13th-01.svg");
   background-position: center top;
   background-repeat: no-repeat;
   height: 7em;
