@@ -1,13 +1,22 @@
 {
   "name": "alumni-charity-challenge-11ty",
   "version": "1.0.0",
-  "description": "",
+  "description": "Static website for Richmond's Alumni Charity Challenge - an annual charity event established in 2013 by the VCU Alumni Richmond Chapter",
   "main": "index.js",
   "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "static-site",
+    "charity",
+    "vcu",
+    "alumni"
+  ],
+  "author": "VCU Alumni Richmond Chapter",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
