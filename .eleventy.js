@@ -8,6 +8,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("bundle.css");
 	eleventyConfig.addPassthroughCopy("main.js");
+  eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
