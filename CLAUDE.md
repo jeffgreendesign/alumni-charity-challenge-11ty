@@ -79,6 +79,43 @@ This is a **single-page website** with all content in [index.html](index.html). 
 └── _site/                # Build output directory (git-ignored)
 ```
 
+## Deployment
+
+### Netlify Configuration
+
+The site is deployed on Netlify at **https://alumnicharity.org**.
+
+The [netlify.toml](netlify.toml) file configures:
+- **Build command**: `npx @11ty/eleventy`
+- **Publish directory**: `_site`
+- **Node version**: 22
+- **Security headers**: X-Frame-Options, X-Content-Type-Options, X-XSS-Protection
+- **Cache optimization**: Long-term caching for static assets (CSS, JS, images)
+
+### Deployment Methods
+
+**Via Netlify CLI:**
+```bash
+# Deploy to production
+netlify deploy --prod
+
+# Preview deploy
+netlify deploy
+```
+
+**Via Git:**
+The site is connected to the GitHub repository and will automatically deploy when changes are pushed to the main branch.
+
+**Via Claude Code with Netlify MCP:**
+The Netlify MCP server is configured for Claude Code, enabling AI-assisted deployments and site management.
+
+### Local Netlify Development
+
+To test the site with Netlify's environment locally:
+```bash
+netlify dev
+```
+
 ## Dependencies
 
 - `@11ty/eleventy`: v2.0.1 (static site generator)

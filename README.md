@@ -97,6 +97,49 @@ The site should be updated annually for each new charity challenge:
 5. **Add new images** to `img/YEAR/` directory
 6. **Update school logos** and participant information
 
+## Deployment
+
+### Live Site
+
+The site is deployed on Netlify at **https://alumnicharity.org**
+
+### Netlify Configuration
+
+The [netlify.toml](netlify.toml) file configures:
+- Build command: `npx @11ty/eleventy`
+- Publish directory: `_site`
+- Node version: 22
+- Security headers and cache optimization
+
+### Deploying Changes
+
+**Automatic Deployment (Recommended):**
+Push changes to the `main` branch on GitHub. Netlify will automatically build and deploy the site.
+
+**Manual Deployment via CLI:**
+```bash
+# Install Netlify CLI globally (if not already installed)
+npm install -g netlify-cli
+
+# Deploy to production
+netlify deploy --prod
+
+# Preview deployment
+netlify deploy
+```
+
+**Local Development with Netlify:**
+```bash
+netlify dev
+```
+
+This runs the site in Netlify's environment locally, useful for testing functions or environment variables.
+
+### Site Management
+
+- **Admin Dashboard**: https://app.netlify.com/projects/silly-entremet-c44d32
+- **Site ID**: b4c2b4e0-8f6a-4398-b5c6-9adb2a090687
+
 ## Dependencies
 
 ### Production Dependencies
