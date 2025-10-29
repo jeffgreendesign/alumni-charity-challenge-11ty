@@ -44,6 +44,49 @@ button:focus:not(:focus-visible) {
   outline: none;
 }
 
+/* Performance - Image Loading States */
+
+img {
+  /* Prevent layout shift with aspect-ratio when supported */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy-loaded images fade in smoothly when loaded */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* Show images once they're loaded */
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([loading]) {
+  opacity: 1;
+}
+
+/* Participant logos get extra loading states */
+.participant-logo {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in, transform 0.3s ease-out;
+  will-change: opacity;
+}
+
+.participant-logo.loaded {
+  opacity: 1;
+}
+
+/* Subtle lift effect on hover for loaded images */
+.participant-logo.loaded:hover {
+  transform: scale(1.02);
+}
+
+/* Prevent cumulative layout shift */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
 /* Mobile styles */
 
 body {
