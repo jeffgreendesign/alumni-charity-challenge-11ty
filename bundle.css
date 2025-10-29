@@ -380,6 +380,36 @@ a img:hover {
   color: #fff;
 }
 
+/* Event Countdown */
+
+.event-countdown {
+  text-align: center;
+  margin: 2em 0 0 0;
+  padding: 1.5em 1em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: inline-block;
+  min-width: 280px;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.25em;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
 /* Benefiting */
 
 #benefiting {
@@ -675,6 +705,14 @@ a img:hover {
 
   .events-past .col-md-6:nth-child(odd) {
     clear: left;
+  }
+
+  .countdown-number {
+    font-size: 4em;
+  }
+
+  .countdown-label {
+    font-size: 1.4em;
   }
 }
 

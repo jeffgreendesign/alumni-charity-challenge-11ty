@@ -7,7 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.ignores.add("CLAUDE.md");
 
   eleventyConfig.addPassthroughCopy("bundle.css");
-	eleventyConfig.addPassthroughCopy("main.js");
+  eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("img");
 
   eleventyConfig.addFilter("cssmin", function(code) {
