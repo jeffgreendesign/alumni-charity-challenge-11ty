@@ -124,8 +124,11 @@
       </p>
     <![endif]-->
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {% include '_header.html' %}
 
+    <main id="main-content">
     <div id="home" class="section">
       <div class="container">
         <div class="row">
@@ -180,11 +183,11 @@
       </div>
     </div>
 
-    <div id="benefiting" class="section">
+    <section id="benefiting" class="section" aria-labelledby="benefiting-heading">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-headline">Benefiting</h2>
+            <h2 id="benefiting-heading" class="section-headline">Benefiting</h2>
           </div>
         </div>
 
@@ -206,11 +209,11 @@
       </div>
     </div>
 
-    <div id="about" class="section">
+    <section id="about" class="section" aria-labelledby="about-heading">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-headline">About</h2>
+            <h2 id="about-heading" class="section-headline">About</h2>
           </div>
         </div>
 
@@ -323,11 +326,11 @@
 
         <div id="participants" class="row">
           <div class="col-md-12">
-            <h3 class="section-headline">2025 Participants</h3>
+            <h3 id="participants-heading" class="section-headline">2025 Participants</h3>
           </div>
         </div>
 
-        <div class="participants-wrap row">
+        <div class="participants-wrap row" role="list" aria-label="Participating universities">
           <div class="participant col-xs-4 col-sm-3 col-md-2">
             <img
               src="/.netlify/images?url=/img/logos/Auburn_University-logo-athletics.png&w=200&fm=webp&q=85"
@@ -948,6 +951,7 @@
       <!-- end .container -->
     </div>
     <!-- end #calendar -->
+    </main>
 
     {% include '_footer.html' %}
   </body>
