@@ -1,10 +1,91 @@
 /* ACC Custom Styles */
 
-/* 
+/*
   ACC Colors
   Orange #f15a29
   Gray #58595b
 */
+
+/* Accessibility - Skip Link */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 10000;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #f15a29;
+  outline-offset: 2px;
+}
+
+/* Accessibility - Focus Visible Styles */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #f15a29;
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users only */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Performance - Image Loading States */
+
+img {
+  /* Prevent layout shift with aspect-ratio when supported */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Lazy-loaded images fade in smoothly when loaded */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* Show images once they're loaded */
+img[loading="lazy"].loaded,
+img[loading="lazy"]:not([loading]) {
+  opacity: 1;
+}
+
+/* Participant logos get extra loading states */
+.participant-logo {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in, transform 0.3s ease-out;
+  will-change: opacity;
+}
+
+.participant-logo.loaded {
+  opacity: 1;
+}
+
+/* Subtle lift effect on hover for loaded images */
+.participant-logo.loaded:hover {
+  transform: scale(1.02);
+}
+
+/* Prevent cumulative layout shift */
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
 
 /* Mobile styles */
 
@@ -84,6 +165,7 @@ a img:hover {
 .navbar-default {
   background-color: #f15a29;
   border-color: #da4615;
+  min-height: 60px; /* Increased for better touch targets */
 }
 
 .navbar-default a {
@@ -101,6 +183,9 @@ a img:hover {
 
 .navbar-default .navbar-toggle {
   border-color: #da4615;
+  padding: 12px 14px; /* Increased for better touch target (min 44x44px) */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -154,7 +239,7 @@ a img:hover {
 
 .navbar-default .navbar-nav .active a:hover,
 .navbar-default .navbar-nav .active a:focus {
-  color: #58595b;
+  color: #000; /* Improved contrast from #58595b */
 }
 
 .navbar-default .navbar-collapse,
@@ -208,9 +293,8 @@ a img:hover {
 .nav li a {
   font-size: 16px;
   font-size: 1.143em;
-  /* padding-top: 14px;
-    padding-bottom: 14px; */
-  /* padding: 2rem 1rem; */
+  padding: 14px 20px; /* Increased for better touch targets (min 44px height) */
+  display: block;
 }
 
 .nav li.social a {
@@ -220,6 +304,7 @@ a img:hover {
 .navbar-default .navbar-nav > li.mobile-donate > a {
   background-color: #000;
   color: #fff;
+  min-height: 44px; /* Ensure minimum touch target size */
 }
 
 .navbar-default .navbar-nav > li.mobile-donate > a:hover,
@@ -232,7 +317,7 @@ a img:hover {
 
 .section {
   /* padding: 3em 0 4em 0; */
-  padding: 1em 0 2rem 0;
+  padding: 2rem 0 2.5rem 0; /* Improved mobile spacing */
 }
 
 .section {
@@ -252,10 +337,13 @@ a img:hover {
 
 .section a {
   color: #d33f0d;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
 }
 
 .section a:hover {
   color: #242424;
+  text-decoration: underline;
 }
 
 .section.alt-section a:hover {
@@ -380,6 +468,36 @@ a img:hover {
   color: #fff;
 }
 
+/* Event Countdown */
+
+.event-countdown {
+  text-align: center;
+  margin: 2em 0 0 0;
+  padding: 1.5em 1em;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  display: inline-block;
+  min-width: 280px;
+}
+
+.countdown-number {
+  display: block;
+  font-size: 3em;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 0.25em;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
 /* Benefiting */
 
 #benefiting {
@@ -407,7 +525,7 @@ a img:hover {
 }
 
 .participants-wrap {
-  margin: 1em 0 3em 0;
+  margin: 1em 0 2em 0; /* Adjusted for better mobile flow */
 }
 
 .participant {
@@ -428,7 +546,8 @@ a img:hover {
 
 .participant img {
   display: inline-block;
-  margin: 0 auto 2em auto;
+  margin: 0 auto 1.5em auto;
+  padding: 0.5em; /* Added padding for better mobile spacing */
   width: 90%;
   height: auto;
   vertical-align: middle;
@@ -491,8 +610,9 @@ a img:hover {
   background-color: #333;
   font-weight: bold;
   text-align: center;
-  padding: 0.75em;
+  padding: 1em 0.75em; /* Increased vertical padding for better mobile touch */
   margin-top: 10px;
+  font-size: 1.1em; /* Slightly larger for better readability */
 }
 
 /* Footer */
@@ -521,6 +641,14 @@ a img:hover {
 .footer ul li a {
   display: block;
   padding: 0.5em 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer ul li a:hover,
+.footer ul li a:focus {
+  text-decoration-thickness: 2px;
+  color: #f15a29; /* Add hover color for better feedback */
 }
 
 .footer .footer-social {
@@ -540,24 +668,48 @@ a img:hover {
   padding: 0;
 }
 
+.footer-webmaster a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-webmaster a:hover,
+.footer-webmaster a:focus {
+  color: #f15a29;
+}
+
 /* Misc */
 
 .back-to-top {
   display: none;
   position: fixed;
-  left: 1em;
+  right: 1em; /* Changed from left to right for better mobile UX */
   bottom: 1em;
   background-color: #fff;
   text-align: center;
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
+  height: 56px; /* Min 44px touch target, increased for comfort */
+  width: 56px;
+  border-radius: 56px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus {
+  background-color: #f15a29;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:hover span,
+.back-to-top:focus span {
+  color: #fff;
 }
 
 .back-to-top span {
   color: #f15a29;
-  font-size: 3em;
-  line-height: 54px;
+  font-size: 2.5em;
+  line-height: 56px;
 }
 
 /* Media queries */
@@ -675,6 +827,14 @@ a img:hover {
 
   .events-past .col-md-6:nth-child(odd) {
     clear: left;
+  }
+
+  .countdown-number {
+    font-size: 4em;
+  }
+
+  .countdown-label {
+    font-size: 1.4em;
   }
 }
 

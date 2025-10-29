@@ -124,8 +124,11 @@
       </p>
     <![endif]-->
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {% include '_header.html' %}
 
+    <main id="main-content">
     <div id="home" class="section">
       <div class="container">
         <div class="row">
@@ -157,6 +160,13 @@
             </h2>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="event-countdown" class="event-countdown">
+              <span class="countdown-number">Loading...</span>
+            </div>
+          </div>
+        </div>
         <!-- <div class="row hidden">
           <div class="col-md-12 home-subhead-virtual">
             <a
@@ -173,11 +183,11 @@
       </div>
     </div>
 
-    <div id="benefiting" class="section">
+    <section id="benefiting" class="section" aria-labelledby="benefiting-heading">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-headline">Benefiting</h2>
+            <h2 id="benefiting-heading" class="section-headline">Benefiting</h2>
           </div>
         </div>
 
@@ -192,6 +202,9 @@
               class="feed-more-graphic"
               src="/.netlify/images?url=/img/logos/Feed_More-logo-2019.png&w=600&fm=webp&q=85"
               alt="Feed More"
+              width="600"
+              height="200"
+              loading="eager"
             />
             <!-- </a> -->
           </div>
@@ -199,11 +212,11 @@
       </div>
     </div>
 
-    <div id="about" class="section">
+    <section id="about" class="section" aria-labelledby="about-heading">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="section-headline">About</h2>
+            <h2 id="about-heading" class="section-headline">About</h2>
           </div>
         </div>
 
@@ -238,6 +251,9 @@
               class="img-responsive"
               src="/.netlify/images?url=/img/2025/web-logo-2025-13th-01.png&w=600&fm=webp&q=85"
               alt="The 13th Annual Alumni Charity Challenge"
+              width="600"
+              height="600"
+              loading="eager"
             />
           </div>
         </div>
@@ -257,6 +273,10 @@
                       class="img-responsive"
                       src="/.netlify/images?url=/img/2018/ACC-2018-Alumni_Charity-Senator_Warner.png&w=300&fm=webp&q=80"
                       alt="U.S. Senator Mark Warners greeting letter"
+                      width="300"
+                      height="388"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </p>
                   <p>U.S. Senator Mark Warner&rsquo;s greeting letter</p>
@@ -273,6 +293,10 @@
                       class="img-responsive"
                       src="/.netlify/images?url=/img/2018/ACC-2018-Alumni_Charity-Senator_Kaine.png&w=300&fm=webp&q=80"
                       alt="U.S. Senator Tim Kaines greeting letter"
+                      width="300"
+                      height="388"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </p>
                   <p>U.S. Senator Tim Kaine&rsquo;s greeting letter</p>
@@ -289,6 +313,10 @@
                       class="img-responsive"
                       src="/.netlify/images?url=/img/2018/ACC-2018-Alumni_Charity-Governor.png&w=300&fm=webp&q=80"
                       alt="Governors Proclamation"
+                      width="300"
+                      height="388"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </p>
                   <p>Governor&rsquo;s Proclamation</p>
@@ -305,6 +333,10 @@
                       class="img-responsive"
                       src="/.netlify/images?url=/img/2018/ACC-2018-Alumni_Charity-Mayor.png&w=300&fm=webp&q=80"
                       alt="City of Richmond Proclamation document"
+                      width="300"
+                      height="388"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </p>
                   <p>City of Richmond Proclamation</p>
@@ -316,15 +348,20 @@
 
         <div id="participants" class="row">
           <div class="col-md-12">
-            <h3 class="section-headline">2025 Participants</h3>
+            <h3 id="participants-heading" class="section-headline">2025 Participants</h3>
           </div>
         </div>
 
-        <div class="participants-wrap row">
+        <div class="participants-wrap row" role="list" aria-label="Participating universities">
           <div class="participant col-xs-4 col-sm-3 col-md-2">
             <img
               src="/.netlify/images?url=/img/logos/Auburn_University-logo-athletics.png&w=200&fm=webp&q=85"
               alt="Auburn University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Auburn University</h3>
           </div>
@@ -333,6 +370,11 @@
             <img
               src="/.netlify/images?url=/img/logos/East_Carolina_University-logo-primary.png&w=200&fm=webp&q=85"
               alt="East Carolina University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">East Carolina University</h3>
           </div>
@@ -341,6 +383,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Elon_University-logo-2025.jpg&w=200&fm=webp&q=85"
               alt="Elon University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Elon University</h3>
           </div>
@@ -349,6 +396,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Fayetteville_State_University-logo-2025.jpg&w=200&fm=webp&q=85"
               alt="Fayetteville State University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Fayetteville State University</h3>
           </div>
@@ -357,6 +409,11 @@
             <img
               src="/.netlify/images?url=/img/logos/George_Mason_University-01.png&w=200&fm=webp&q=85"
               alt="George Mason University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">George Mason University</h3>
           </div>
@@ -365,6 +422,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Hampton_University-logo.png&w=200&fm=webp&q=85"
               alt="Hampton University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Hampton University</h3>
           </div>
@@ -373,6 +435,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Howard_University-logo-02.png&w=200&fm=webp&q=85"
               alt="Howard University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Howard University</h3>
           </div>
@@ -381,6 +448,11 @@
             <img
               src="/.netlify/images?url=/img/logos/James_Madison_University-logo.png&w=200&fm=webp&q=85"
               alt="James Madison University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">James Madison University</h3>
           </div>
@@ -389,6 +461,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Longwood_University-logo.png&w=200&fm=webp&q=85"
               alt="Longwood University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Longwood University</h3>
           </div>
@@ -397,6 +474,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Morgan_State_University-logo.png&w=200&fm=webp&q=85"
               alt="Morgan State University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Morgan State University</h3>
           </div>
@@ -405,6 +487,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Norfolk_State_University-logo-2022-02.png&w=200&fm=webp&q=85"
               alt="Norfolk State University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Norfolk State University</h3>
           </div>
@@ -413,6 +500,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Penn_State_University-logo-01.png&w=200&fm=webp&q=85"
               alt="Penn State University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Penn State University</h3>
           </div>
@@ -421,6 +513,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Roanoke_College-logo.png&w=200&fm=webp&q=85"
               alt="Roanoke College"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Roanoke College</h3>
           </div>
@@ -429,6 +526,11 @@
             <img
               src="/.netlify/images?url=/img/logos/South_Carolina_State_University-logo.png&w=200&fm=webp&q=85"
               alt="South Carolina State University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">
               South Carolina State University
@@ -439,6 +541,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_Alabama-logo-2021.png&w=200&fm=webp&q=85"
               alt="University of Alabama"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of Alabama</h3>
           </div>
@@ -447,6 +554,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_Georgia-logo.png&w=200&fm=webp&q=85"
               alt="University of Georgia"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of Georgia</h3>
           </div>
@@ -455,6 +567,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_Lynchburg-logo-2018.png&w=200&fm=webp&q=85"
               alt="University of Lynchburg"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of Lynchburg</h3>
           </div>
@@ -463,6 +580,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_Michigan-logo.png&w=200&fm=webp&q=85"
               alt="University of Michigan"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of Michigan</h3>
           </div>
@@ -471,6 +593,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_North_Carolina-logo-2017.png&w=200&fm=webp&q=85"
               alt="University of North Carolina"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of North Carolina</h3>
           </div>
@@ -479,6 +606,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_South_Carolina-logo-2025.png&w=200&fm=webp&q=85"
               alt="University of South Carolina"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of South Carolina</h3>
           </div>
@@ -487,6 +619,11 @@
             <img
               src="/.netlify/images?url=/img/logos/University_of_Virginia-logo-2022.png&w=200&fm=webp&q=85"
               alt="University of Virginia"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">University of Virginia</h3>
           </div>
@@ -495,6 +632,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Virginia_Commonwealth_University-logo.png&w=200&fm=webp&q=85"
               alt="Virginia Commonwealth University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">
               Virginia Commonwealth University
@@ -505,6 +647,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Virginia_Union_University-logo.png&w=200&fm=webp&q=85"
               alt="Virginia Union University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Virginia Union University</h3>
           </div>
@@ -513,6 +660,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Virginia_Wesleyan_University-logo.png&w=200&fm=webp&q=85"
               alt="Virginia Wesleyan University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Virginia Wesleyan University</h3>
           </div>
@@ -521,6 +673,11 @@
             <img
               src="/.netlify/images?url=/img/logos/West_Virginia_University-logo.png&w=200&fm=webp&q=85"
               alt="West Virginia University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">West Virginia University</h3>
           </div>
@@ -529,6 +686,11 @@
             <img
               src="/.netlify/images?url=/img/logos/College_of_William_and_Mary-logo-2025.png&w=200&fm=webp&q=85"
               alt="William &amp; Mary"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">College of William &amp; Mary</h3>
           </div>
@@ -537,6 +699,11 @@
             <img
               src="/.netlify/images?url=/img/logos/Yale_University-logo-2024.png&w=200&fm=webp&q=85"
               alt="Yale University"
+              width="200"
+              height="200"
+              loading="lazy"
+              decoding="async"
+              class="participant-logo"
             />
             <h3 class="participant-headline">Yale University</h3>
           </div>
@@ -941,6 +1108,7 @@
       <!-- end .container -->
     </div>
     <!-- end #calendar -->
+    </main>
 
     {% include '_footer.html' %}
   </body>
